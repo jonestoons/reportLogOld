@@ -1,24 +1,194 @@
-﻿<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>ASP.NET Web API is a framework that makes it easy to build HTTP services that reach
-        a broad range of clients, including browsers and mobile devices. ASP.NET Web API
-        is an ideal platform for building RESTful applications on the .NET Framework.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301870">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301871">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301872">Learn more &raquo;</a></p>
+﻿
+@{ 
+    Layout = "~/Views/Shared/_tempLayout.cshtml";
+}
+
+<div class="fullwidth clearfix">
+    <div id="topcontainer" class="bodycontainer clearfix" data-uk-scrollspy="{cls:'uk-animation-fade', delay: 300, repeat: true}">
+
+        <p><img src="~/Content/logo/mainLogo.png" /></p>
+        <h1><br />is coming soon</h1>
+
     </div>
 </div>
+
+<div class="arrow-separator arrow-white"></div>
+
+<div class="fullwidth colour1 clearfix">
+    <div id="countdown" class="bodycontainer clearfix" data-uk-scrollspy="{cls:'uk-animation-fade', delay: 300, repeat: true}">
+
+        <div id="countdowncont" class="clearfix">
+            <ul id="countscript">
+                <li>
+                    <span id="days">00</span>
+                    <p>Days</p>
+                </li>
+                <li>
+                    <span id="hours">00</span>
+                    <p>Hours</p>
+                </li>
+                <li class="clearbox">
+                    <span id="minutes">00</span>
+                    <p>Minutes</p>
+                </li>
+                <li>
+                    <span id="seconds">00</span>
+                    <p>Seconds</p>
+                </li>
+            </ul>
+           
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+
+
+<div class="arrow-separator arrow-theme"></div>
+
+<div class="fullwidth colour2 clearfix">
+    <div id="maincont" class="bodycontainer clearfix" data-uk-scrollspy="{cls:'uk-animation-fade', delay: 300, repeat: true}">
+
+        <h2>If you would like to receive <strong>news and special offers</strong> please send us your email address below:</h2>
+        <div id="signupform" class="sb-search clearfix">
+            
+
+            <div id="contact" class="clearfix">
+                <input class="sb-search-input" id="email" placeholder="Enter email ..." type="text" value="">
+                <button class="formbutton"><span class="fa fa-search"></span></button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="arrow-separator arrow-themelight"></div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Response</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="SuccessMsg">
+                    <h4 class="text-success success">Email received successfully</h4>
+                </div>
+                <div id="FailedMsg">
+                    <h4 class="text-danger danger">Something went wrong...</h4>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="arrow-separator arrow-grey"></div>
+
+<div class="fullwidth clearfix">
+    <div id="footercont" class="bodycontainer clearfix" data-uk-scrollspy="{cls:'uk-animation-fade', delay: 300, repeat: true}">
+
+        <p class="backtotop"><a title="" href="#backtotop"><span class="fa fa-angle-double-up"></span></a></p>
+        <div id="socialmedia" class="clearfix">
+            <ul>
+                <li><a title="" href="#" rel="external"><span class="fa fa-facebook"></span></a></li>
+                <li><a title="" href="#" rel="external"><span class="fa fa-twitter"></span></a></li>
+                @*<li><a title="" href="#" rel="external"><span class="fa fa-google-plus"></span></a></li>
+                  <li><a title="" href="#" rel="external"><span class="fa fa-linkedin"></span></a></li>*@
+                <li><a title="" href="#" rel="external"><span class="fa fa-instagram"></span></a></li>
+            </ul>
+        </div>
+        @*<p>Free Responsive Website Template by <a title="download website templates" href="http://www.downloadwebsitetemplates.co.uk" rel="external">Download Website Templates</a> - Icons by <a title="" href="http://fortawesome.github.io/Font-Awesome/" rel="external">Font Awesome</a></p>*@
+    </div>
+</div>
+
+<script>
+
+    // Set the date we're counting down to
+    var countDownDate = new Date("Jul 01, 2020 00:00:00").getTime();
+
+    // Update the count down every 1 second
+    var x = setInterval(function () {
+
+        // Get today's date and time
+        var now = new Date().getTime();
+
+        // Find the distance between now and the count down date
+        var distance = countDownDate - now;
+
+        // Time calculations for days, hours, minutes and seconds
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Display the result in the element with id="demo"
+        //document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+        //+ minutes + "m " + seconds + "s ";
+
+        document.getElementById("days").innerHTML = days;
+        document.getElementById("hours").textContent = hours;
+        document.getElementById("minutes").textContent = minutes;
+        document.getElementById("seconds").textContent = seconds;
+
+        //console.log(days);
+        //console.log(hours);
+        //console.log(minutes);
+        //console.log(seconds);
+
+
+        // If the count down is finished, write some text
+        if (distance < 0) {
+            clearInterval(x);
+            //document.getElementById("demo").innerHTML = "EXPIRED";
+        }
+    }, 1000);
+</script>
+
+<script>
+    $(document).ready(function () {
+        $('.formbutton').click(function () {
+            $('#SuccessMsg').hide();
+            $('#FailedMsg').hide();
+
+
+            var email = $('#email').val();
+            console.log(email);
+
+            $.ajax({
+                url: 'Newsletter/getEmail',
+                type: 'POST',
+                data: { email:email },
+                success: function(data) {
+                    if (data == 1) {
+                        $('#SuccessMsg').show();
+                        $('#exampleModal').modal('show');
+                        $('#email').empty();
+                    } else {
+                        $('#FailedMsg').show();
+                        $('#exampleModal').modal('show');
+                    }
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+
+                    console.log(textStatus, errorThrown);
+                }
+            });
+        });
+
+    });
+
+
+
+
+</script>

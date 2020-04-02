@@ -3,6 +3,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
+using System.Data.Entity;
+using reportLog.Models.DataModels;
 
 namespace reportLog.Models
 {
@@ -20,6 +22,7 @@ namespace reportLog.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        public DbSet<EmailListings> EmailLists { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {

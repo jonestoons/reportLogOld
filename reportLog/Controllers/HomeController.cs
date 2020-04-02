@@ -10,6 +10,14 @@ namespace reportLog.Controllers
     {
         public ActionResult Index()
         {
+            ViewBag.Title = "Home";
+
+            return View();
+        }
+
+        [Authorize]
+        public ActionResult Index2()
+        {
             ViewBag.Title = "Home Page";
 
             return View();
