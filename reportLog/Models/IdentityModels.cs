@@ -5,6 +5,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using System.Data.Entity;
 using reportLog.Models.DataModels;
+using System;
 
 namespace reportLog.Models
 {
@@ -18,11 +19,22 @@ namespace reportLog.Models
             // Add custom user claims here
             return userIdentity;
         }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public int CompanyID { get; set; }
+        public DateTime RegisteredDate { get; set; }
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public DbSet<EmailListings> EmailLists { get; set; }
+        public DbSet<Booking> Bookings { get; set; }
+        public DbSet<Transaction> Transactions { get; set; }
+        public DbSet<Company> Companies { get; set; }
+        public DbSet<Rider> Riders { get; set; }
+        public DbSet<SubPackage> SubPackages { get; set; }
+        public DbSet<CompanyCustomer> CompanyCustomers { get; set; }
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
